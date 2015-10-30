@@ -24,7 +24,6 @@
 
 #include <QString>
 #include <QFile>
-#include <QDir>
 #include <QTextStream>
 #include <QFileInfo>
 
