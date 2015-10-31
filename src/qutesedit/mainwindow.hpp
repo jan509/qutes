@@ -52,6 +52,14 @@ namespace qe {
     QMenu *help_menu;
     QToolBar *toolbar;
     QStatusBar *statusbar;
+    QMenu *file_new_menu;
+    QAction *new_file_action;
+    QAction *new_string_action;
+    QAction *open_action;
+    QAction *save_action;
+    QAction *save_as_action;
+    QAction *close_action;
+    QAction *exit_action;
   };
 }
 

@@ -32,6 +32,7 @@
 namespace qe {
   MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     setWindowTitle("QutesEdit");
+    /* Menubar */
     menubar = new QMenuBar();
     file_menu = new QMenu("File", this);
     edit_menu = new QMenu("Edit", this);
@@ -44,10 +45,29 @@ namespace qe {
     menubar->addMenu(extras_menu);
     menubar->addMenu(help_menu);
     setMenuBar(menubar);
+    /* Tool & status bar */
     toolbar = new QToolBar();
     addToolBar(toolbar);
     statusbar = new QStatusBar();
     setStatusBar(statusbar);
+    /* Actions */
+    file_new_menu = new QMenu("New...", this);
+    new_file_action = new QAction("New file", this);
+    new_string_action = new QAction("New string", this);
+    open_action = new QAction("Open...", this);
+    save_action = new QAction("Save", this);
+    save_as_action = new QAction("Save as...", this);
+    close_action = new QAction("Close", this);
+    exit_action = new QAction("Exit", this);
+    file_menu->addMenu(file_new_menu);
+    file_new_menu->addAction(new_file_action);
+    file_new_menu->addAction(new_string_action);
+    file_menu->addAction(open_action);
+    file_menu->addAction(save_action);
+    file_menu->addAction(save_as_action);
+    file_menu->addAction(close_action);
+    file_menu->addSeparator();
+    file_menu->addAction(exit_action);
     // INFO(31.10.2015, jan): create own class for the tab widget. we will modify it.
     QTabWidget *tw = new QTabWidget();
     setCentralWidget(tw);
